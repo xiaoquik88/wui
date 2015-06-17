@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.master');
 });
+
+
+Route::get('/tree', function () {
+    return view('temp.tree');
+});
+
+Route::get('/apiguide', 'ApiGuideController@index');
+
+Route::get('/method', 'MethodController@index');
