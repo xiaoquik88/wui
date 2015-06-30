@@ -12,14 +12,34 @@
 */
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('index');
 });
 
+Route::get('/gentest', function () {
 
-Route::get('/tree', function () {
-    return view('temp.tree');
+    $formStruct =  DB::table('scr_frm_det')
+        ->where('i_frm_id',2)
+//        ->where('p_pos',0)
+        ->orderBy('p_pos')
+        ->get();
+
+    echo "<pre>";
+    print_r($formStruct);
+    echo "</pre>";
+    exit;
+
+
 });
+
+function recu(){
+    return "hello";
+}
+
+Route::get('/login', 'ApiAuthController@index');
+
 
 Route::get('/apiguide', 'ApiGuideController@index');
 
 Route::get('/method', 'MethodController@index');
+
+

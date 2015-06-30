@@ -1,14 +1,14 @@
 @extends('layout.master')
 
 @section('content')
- <script type="text/javascript" src="../resources/assets/jsdep/angular/angular.js" ></script>
- <script type="text/javascript" src="../resources/assets/jsdep/angular-ui-router/0.2.14/angular-ui-router.js" ></script>
+ <script type="text/javascript" src="default-theme/js/angular/angular.js" ></script>
+ <script type="text/javascript" src="default-theme/js/angular-ui-router/0.2.14/angular-ui-router.js" ></script>
 
 <div ng-app="hybridApp" ui-view >
 
-sas
-
 </div>
+
+
 
 <script type="text/javascript">
   
@@ -20,9 +20,9 @@ hybridApp.config(function($stateProvider, $urlRouterProvider) {
     
   $stateProvider
      .state('show', {
-          url: '/',
-          templateUrl: '../resources/views/api/partials/api_manage.html',
-          controller : 'ApiController',
+          url: '/:docid',
+          templateUrl: 'ng-partials/api/api_manage.html',
+          controller : 'ApiController'
           
       });
 });
@@ -34,6 +34,7 @@ function($scope)
   $scope.detail = {};
   $scope.show_index = true;
   $scope.show_detail = false;
+  $scope.showApiAddEdit = false;
 
   $scope.api.title = [
                       {
@@ -64,8 +65,15 @@ function($scope)
       console.log(id);
       $scope.show_index = false;
       $scope.show_detail = true;
+      $scope.showApiAddEdit = false;
       $scope.detail.id = id;
-   }                  
+   };
+
+   $scope.register = function(){
+       $scope.showApiAddEdit = true;
+       $scope.show_index = false;
+       $scope.show_detail = false;
+   };
 
 }]);  
 </script>

@@ -1,0 +1,70 @@
+<style type="text/css">
+    a:link {
+        text-decoration: none;
+    }
+    a:visited {
+        text-decoration: none;
+    }
+    a:active {
+        text-decoration: none;
+    }
+</style>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <!-- sidebar -->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav" ng-repeat="api in api.title">
+                <li><a href="" ui-sref="api.detail({apiId:api.id})">{{api.title}}</a></li>
+            </ul>
+
+        </div>
+
+        <!-- main area -->
+        <div class="col-xs-12 col-sm-9">
+            <br>
+            <div class="pull-right">
+
+                <button type="button" class="btn btn-default" ui-sref="api.add()" ><a><b>Register API</b></a></button></div>
+
+            <div ui-view="columnTwo"></div>
+
+
+        </div><!-- /.col-xs-12 main -->
+    </div><!--/.row-->
+
+</div>
+
+<!--THIS IS A TEMP LOCATION REMOVE AFTER CONCEPT IS PROVEN-->
+<script type="text/ng-template" id="row-start.html">
+    {{options.templateOptions | json }}
+    <div class="row {{options.templateOptions.class}}" style="{{options.templateOptions.styles}}">
+</script>
+
+<script type="text/ng-template" id="row-end.html">
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="paramsField.html">
+<label  class="control-label">{{options.templateOptions.label}}</label>
+<div class="input-group">
+   <table style="padding: 5px;">
+       <tr>
+           <th>Name</th>
+           <th>Type</th>
+           <th>Required</th>
+
+       </tr>
+       <tr>
+           <td><input type="email" class="form-control" id="email"></td>
+           <td><input type="email" class="form-control" id="emsaisdl"></td>
+           <td><input type="email" class="form-control" id="emaisdl"></td>
+
+
+       </tr>
+   </table>
+</div><!-- /input-group -->
+<br>
+</script>

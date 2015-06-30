@@ -1,0 +1,19 @@
+<div >
+    <h2>{{vm.pageTitle}}</h2>
+    <br>
+        <form ng-submit="vm.onSubmit()" novalidate>
+            <formly-form model="vm.model" fields="vm.formFields" form="vm.genForm">
+                <button type="submit" class="btn btn-primary" ng-disabled="vm.genForm.$invalid">Submit</button>
+            </formly-form>
+        </form>
+        <br>
+
+        <lable>Model</lable>
+        <pre>{{ vm.model | json }}</pre>
+        <p>
+        <lable>JSON Structure</lable>
+        <pre>{{ vm.illustrate | json }}</pre>
+        <p>
+        <!--<lable>Fields</lable>-->
+        <!--<pre>{{ vm.formFields | json }}</pre>-->
+</div>

@@ -1,0 +1,17 @@
+<!--<pre>{{options.templateOptions.ddOptions | json}}</pre>-->
+<label  class="control-label">{{options.templateOptions.label}}*</label>
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ model[fields[index]['key']+'_method'] }} &nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="option in options.templateOptions.ddOptions" ><a href ng-click="model[fields[index]['key']+'_method'] = option" >{{option}}</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" aria-label="..."
+                       placeholder="{{options.templateOptions.placeholder}}"
+                       ng-model="model[fields[index]['key']]">
+            </div><!-- /input-group -->
+<p>
+<!--<pre>-->
+    <!--{{options.templateOptions.options | json}}-->
+<!--</pre>-->

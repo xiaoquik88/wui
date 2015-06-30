@@ -13,15 +13,16 @@
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="../resources/assets/themes/default/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="default-theme/css/bootstrap/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="../resources/assets/themes/default/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="default-theme/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="theme.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="../resources/assets/themes/default/dist/js/ie-emulation-modes-warning.js"></script> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -99,8 +100,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="../resources/assets/jsdep/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../resources/assets/themes/default/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="default-theme/js/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="default-theme/js/bootstrap/bootstrap.min.js"></script>
    
     <!-- <script src="../../assets/js/docs.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
