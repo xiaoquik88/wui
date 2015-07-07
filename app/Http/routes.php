@@ -17,23 +17,77 @@ Route::get('/', function () {
 
 Route::get('/gentest', function () {
 
-    $formStruct =  DB::table('scr_frm_det')
-        ->where('i_frm_id',2)
-//        ->where('p_pos',0)
-        ->orderBy('p_pos')
-        ->get();
+//    $test = array();
+//
+//    $test['className'] = 'row';
+//    $test['fieldGroup'] = [];
+//
+//    $child['className'] = "form-control";
+//    $child['type'] = "input";
+//    $test['fieldGroup'] = $child;
+//
+//
+//    echo "<pre>";
+//    print_r(json_encode($test));
+//    echo "</pre>";
+//    exit;
 
+    $data = array(
+        '0'        => 'content 0',
+        '1'        => 'content 1',
+        '1.1'      => 'content 1.1',
+        '1.1.1'    => 'content 1.1.1',
+        '2'        => 'content 2',
+        '4'        => 'content 4',
+        '4.1'      => 'content 4.1',
+        '4.1.1'    => 'content 4.1.1',
+        '4.1.1.9'  => 'content 4.1.1.9',
+        '4.1.1.10' => 'content 4.1.1.10',
+        '4.1.1.11' => 'content 4.1.1.11',
+    );
+
+    $struct = array(
+        'children' => array()
+    );
+
+    foreach ($data as $ruleID => $content) {
+        $parent =& $struct;
+        foreach (explode('.', $ruleID) as $val) {
+            if (!isset($parent['children'][$val])) {
+                $parent['children'][$val] = array(
+                    'content' => '',
+                    'children' => array()
+                );
+            }
+
+            $parent =& $parent['children'][$val];
+        }
+
+        $parent['content'] = $content;
+    }
     echo "<pre>";
-    print_r($formStruct);
+    print_r($struct);
     echo "</pre>";
     exit;
+
+//
+//    $formStruct =  DB::table('scr_frm_det')
+//        ->where('i_frm_id',2)
+//        ->where('i_frm_id',2)
+////        ->where('p_pos',0)
+//        ->orderBy('p_pos')
+//        ->get();
+
+
+//
+//    echo "<pre>";
+//    print_r($formStruct);
+//    echo "</pre>";
+//    exit;
 
 
 });
 
-function recu(){
-    return "hello";
-}
 
 Route::get('/login', 'ApiAuthController@index');
 
