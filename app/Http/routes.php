@@ -92,6 +92,12 @@ Route::get('/gentest', function () {
 Route::get('/login', 'ApiAuthController@index');
 
 
+Route::get('/quik', function () {
+
+    echo "test";
+});
+
+
 Route::get('/apiguide', 'ApiGuideController@index');
 
 Route::get('/method', 'MethodController@index');
