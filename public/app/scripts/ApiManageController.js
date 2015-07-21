@@ -212,10 +212,10 @@
                                             {
                                                 "className": "col-xs-6",
                                                 "type": "input",
-                                                "key": "parName",
+                                                "key": "parName2",
                                                 templateOptions: {
                                                     type: 'text',
-                                                    label: 'Name',
+                                                    label: 'Name2',
                                                     placeholder: 'API Name'
                                                 }
 
@@ -245,10 +245,10 @@
                                             {
                                                 "className": "col-xs-12",
                                                 "type": "input",
-                                                "key": "parName",
+                                                "key": "parName3",
                                                 templateOptions: {
                                                     type: 'text',
-                                                    label: 'Name',
+                                                    label: 'Name1',
                                                     placeholder: 'API Name'
 
 
